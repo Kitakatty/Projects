@@ -53,4 +53,24 @@ VALUES
   ('A', '2021-01-07'),
   ('B', '2021-01-09');
 
+  select *
+  from members;
+
+  select *
+  from sales;
+
+  select *
+  from menu;
   
+
+-- What is the total amount each customer spent at the restaurant?
+
+select  customer_id , sum(price) amount
+from sales s
+join menu m on s.product_id = m.product_id
+group by customer_id
+order by customer_id
+
+-- How many days has each customer visited the restaurant?
+
+
